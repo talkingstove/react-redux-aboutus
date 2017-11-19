@@ -1,3 +1,50 @@
+.user-card {
+  width: 300px;
+  padding: 20px;
+  border: 10px solid #ddd;
+  height: 300px; }
+  .user-card .person-thumb-lg {
+    width: calc(300px - 40px);
+    height: 250px; }
 
+.personThumbList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0; }
+  .personThumbList .personThumb {
+    width: 200px;
+    height: 200px;
+    padding: 10px; }
+  .personThumbList .personThumbListItem {
+    display: inline-block;
+    width: 220px;
+    height: 220px;
+    margin: 10px;
+    background-color: #ccc;
+    border: 4px solid #ddd;
+    cursor: pointer;
+    border-radius: 10px; }
+
+.top-panels-view {
+  position: relative;
+  height: 320px; }
+  .top-panels-view .top-panels-list {
+    position: absolute;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: -300px;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    width: 100%;
+    height: 300px; }
+    .top-panels-view .top-panels-list .top-panels-list-item {
+      display: inline-block;
+      width: 300px; }
+  .top-panels-view.has-active-person .top-panels-list {
+    left: 0; }
 
 /*# sourceMappingURL=styles.css.map */

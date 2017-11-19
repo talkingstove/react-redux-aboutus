@@ -7,10 +7,9 @@ function reducer(state, action) {
   }
   
   switch (action.type) {
-    case 'updateActivePersonId':
-
+    case 'updateActivePerson':
       return Object.assign({}, state, {
-        activePersonId: action.payload.activePersonId
+        activePerson1: action.payload.updateActivePerson
       })
       
     default:
@@ -113,7 +112,19 @@ const defaultState = {
       bio: 'Digging holes has always been a passion of mine'
     }
   ],
-  activePersonId: null
+  activePerson1: null,
+  activePerson2: {
+      personId: 14,
+      fullName: 'Paige Rabbit',
+      img: '/img/users/14.jpg',
+      bio: 'On the weekends I like to hop'
+    },
+  activePerson3: {
+      personId: 15,
+      fullName: 'Athena Rabbit',
+      img: '/img/users/15.jpg',
+      bio: 'Digging holes has always been a passion of mine'
+    }
 };
 
 export const appStore = createStore(reducer, defaultState);

@@ -1,2 +1,72 @@
+$topPanelWidth: 300px;
+$topListSlideTime: 0.3s;
 
+.user-card {
+  width: $topPanelWidth;
+  padding: 20px;
+  border: 10px solid #ddd;
+  height: 300px;
 
+  .person-thumb-lg {
+    width: calc(#{$topPanelWidth} - 40px);
+    height: 250px;
+  }
+}
+
+.personThumbList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  .personThumb {
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+  }
+
+  .personThumbListItem {
+    display: inline-block;
+    width: 220px;
+    height: 220px;
+    margin: 10px;
+    background-color: #ccc;
+    border: 4px solid #ddd;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+}
+
+.top-panels-view {
+  position: relative;
+  height: 320px;
+
+  .top-panels-list {
+    position: absolute;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: -($topPanelWidth);
+    -webkit-transition: $topListSlideTime;
+    -moz-transition: $topListSlideTime;
+    -o-transition: $topListSlideTime;
+    transition: $topListSlideTime;
+
+    width: 100%;
+    height: 300px;
+
+    
+
+    .top-panels-list-item {
+      display: inline-block;
+      width: $topPanelWidth;
+    }
+  }
+
+  &.has-active-person {
+    .top-panels-list {
+      left: 0;
+    }
+  }
+
+}

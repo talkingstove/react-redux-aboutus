@@ -1,14 +1,25 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import UserCard from './UserCard'
 
 class TopPanels extends React.Component {
 
   render() {
-    const topPanelsClasses = "top-panels-view " + (this.props.activePersonId ? "has-active-person" : "no-active-person");
+    const topPanelsClasses = "top-panels-view " + (this.props.activePerson1 ? "has-active-person" : "no-active-person");
 
     return (
       <div className={topPanelsClasses}>
-
+        <ul className="top-panels-list">
+          <li className="top-panels-list-item">
+            <UserCard user={this.props.activePerson1} />
+          </li>
+          <li className="top-panels-list-item">
+            <UserCard user={this.props.activePerson2} />
+          </li>
+          <li className="top-panels-list-item">
+            <UserCard user={this.props.activePerson3} />
+          </li>
+        </ul>
       </div>
       
     );
@@ -17,7 +28,9 @@ class TopPanels extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    activePersonId: state.activePersonId
+    activePerson1: state.activePerson1,
+    activePerson2: state.activePerson2,
+    activePerson3: state.activePerson3
   }
 }
 

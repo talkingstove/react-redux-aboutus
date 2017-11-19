@@ -4,10 +4,11 @@ import {connect} from 'react-redux';
 class BottomList extends React.Component {
 
   render() {
+    let self = this;
     const peopleListItems = this.props.peopleData.map(function(person) {
       
       return (
-           <li className="personThumbListItem">
+           <li className="personThumbListItem" key={person.personId} onClick={() => self.props.updateActivePerson(person) }>
               <img src={person.img} className="personThumb" />
            </li>
          )
@@ -17,7 +18,7 @@ class BottomList extends React.Component {
     return (
    
       <div className="bottom-list-view">
-        <ul>
+        <ul className="personThumbList">
           {peopleListItems}
         </ul>
       </div>
@@ -34,10 +35,10 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    updateActivePersonId: (newPersonId) => dispatch({
-      type : 'updateActivePersonId',
+    updateActivePerson: (newPerson) => dispatch({
+      type : 'updateActivePerson',
       payload: {
-        updateActivePersonId: newPersonId
+        updateActivePerson: newPerson
       }
     })
   }
