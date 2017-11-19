@@ -1,17 +1,14 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import TopPanels from './TopPanels';
-import BottomList from './BottomList';
 
-class SampleApp extends React.Component {
+class TopPanels extends React.Component {
 
   render() {
+    const topPanelsClasses = "top-panels-view " + (this.props.activePersonId ? "has-active-person" : "no-active-person");
 
     return (
-   
-      <div className="sample-app-view">
-        <TopPanels />
-        <BottomList />
+      <div className={topPanelsClasses}>
+
       </div>
       
     );
@@ -20,7 +17,7 @@ class SampleApp extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-
+    activePersonId: state.activePersonId
   }
 }
 
@@ -33,4 +30,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SampleApp)
+)(TopPanels)

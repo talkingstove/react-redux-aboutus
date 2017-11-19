@@ -10,6 +10,6 @@ app.get('/', function (req, res) {
   res.send('Hello World!')
 });
 
-app.listen(4000, function () {
-  console.log('About us app listening on locahost:4000!')
+app.listen(4222, function () {
+  console.log('About us app listening on locahost:4222!')
 });
