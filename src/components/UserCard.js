@@ -8,8 +8,17 @@ class UserCard extends React.Component {
 
     return (
       <div className="user-card">
-        {user.personId}
-        <img src={user.img} className="person-thumb-lg" />
+        
+
+        <div className="user-card-img-wrapper">
+          <img src={user.img} className="person-thumb-lg" />
+        </div>
+        <h5>
+          {user.fullName}
+        </h5>
+        <p className="user-card-bio">
+          {user.bio}
+        </p>
       </div>
       
     );

@@ -11178,7 +11178,6 @@ function reducer(state, action) {
 
   switch (action.type) {
     case 'updateActivePerson':
-      debugger;
       return Object.assign({}, state, {
         activePerson1: action.payload.updateActivePerson
       });
@@ -24753,8 +24752,21 @@ var UserCard = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         { className: 'user-card' },
-        user.personId,
-        _react2.default.createElement('img', { src: user.img, className: 'person-thumb-lg' })
+        _react2.default.createElement(
+          'div',
+          { className: 'user-card-img-wrapper' },
+          _react2.default.createElement('img', { src: user.img, className: 'person-thumb-lg' })
+        ),
+        _react2.default.createElement(
+          'h5',
+          null,
+          user.fullName
+        ),
+        _react2.default.createElement(
+          'p',
+          { className: 'user-card-bio' },
+          user.bio
+        )
       );
     }
   }]);
