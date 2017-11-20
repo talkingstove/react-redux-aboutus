@@ -1,0 +1,100 @@
+$topPanelWidth: 300px;
+$topListSlideTime: 0.3s;
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+}
+
+h5 {
+  margin: 8px 0;
+  font-size: 15px;
+}
+
+
+.personThumbList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  .personThumb {
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+  }
+
+  .personThumbListItem {
+    display: inline-block;
+    width: 220px;
+    height: 220px;
+    margin: 10px;
+    background-color: #ccc;
+    border: 4px solid #ddd;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+}
+
+.top-panels-view {
+  position: relative;
+  height: 450px;
+  background-color: aqua;
+  display: flex;
+  align-items: top;
+
+  .top-panels-list {
+    position: absolute;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: -360px;
+    -webkit-transition: $topListSlideTime;
+    -moz-transition: $topListSlideTime;
+    -o-transition: $topListSlideTime;
+    transition: $topListSlideTime;
+
+    width: 100%;
+    height: 300px;
+
+    .top-panels-list-item {
+      display: inline-flex;
+      width: $topPanelWidth;
+      border: 20px solid #ddd;
+      background-color: #ccc;
+      border-radius: 10px;
+      margin: 20px;
+
+      .user-card {
+        width: auto;
+        padding: 20px;
+   
+
+        .user-card-bio {
+          font-weight: 300;
+          color: grey;
+          font-size: 12px;
+        }
+
+        .user-card-img-wrapper {
+          margin: 0 auto;
+          border: 5px solid orange;
+          border-radius: 10px;
+          overflow: hidden;
+        }
+
+        .person-thumb-lg {
+          width: calc(#{$topPanelWidth} - 40px);
+          height: 250px;
+        }
+      }
+    }
+  }
+
+  &.has-active-person {
+    .top-panels-list {
+      left: 0;
+    }
+  }
+
+}
