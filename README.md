@@ -3,9 +3,10 @@
 To run locally:
 
 run `npm install` from root folder
+
 cd to "server" and run `node index.js`
 
-site is now avaiable on http://localhost:4222
+site is now available on http://localhost:4222
 
 To make changes:
 
