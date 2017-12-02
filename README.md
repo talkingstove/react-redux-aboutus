@@ -1,6 +1,6 @@
 # react-redux-aboutus
 
-To run locally:
+To run locally: (this is assuming basics like you are on a Mac and have Node installed and know how to use it)
 
 run `npm install` from root folder
 
